@@ -1,0 +1,26 @@
+version: '3.3'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres-aulua
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=aulua
+    volumes:
+      - ./PostgreSQL:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  product-service:
+    depends_on:
+      - postgres
+    build:
+      context: ./product-service
+      dockerfile: Dockerfile
+    environment:
+      - DATASOURCE_URL=jdbc:postgresql://postgres:5432/aulua
+      - DATASOURCE_USERNAME=postgres
+      - DATASOURCE_PASSWORD=postgres
+    ports:
+      - "8080:8080"
