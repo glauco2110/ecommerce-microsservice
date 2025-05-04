@@ -1,12 +1,12 @@
-name: agenda-ci
+name: ecommerce-ci
 
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
       postgres:
         image: postgres:15
         env:
-          POSTGRES_DB: agendaprof
+          POSTGRES_DB: aulua
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
         ports:
