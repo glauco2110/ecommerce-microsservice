@@ -81,7 +81,7 @@ public class ProductRepositoryImpl implements ProductRepository {
             query.where(cb.like(root.get("name"), "%" + filter + "%"));
         }
 
-        var order = sortOrder.equals("asc") ? cb.asc(root.get(sortBy)) : cb.desc(root.get(sortBy));
+        var order = sortOrder.equalsIgnoreCase("asc") ? cb.asc(root.get(sortBy)) : cb.desc(root.get(sortBy));
         query.orderBy(order);
 
         var result = em.createQuery(query)

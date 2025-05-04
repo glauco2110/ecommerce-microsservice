@@ -53,8 +53,8 @@ public class ProductController {
     public ResponseEntity<GetAllProductOutput> findAll(@RequestParam(required = false) String filter,
                                                        @RequestParam(defaultValue = "0") int page,
                                                        @RequestParam(defaultValue = "10") int size,
-                                                       @RequestParam(required = false) String sort,
-                                                       @RequestParam(required = false) String order) {
+                                                       @RequestParam(required = false, defaultValue = "name") String sort,
+                                                       @RequestParam(required = false, defaultValue = "asc") String order) {
 
         GetAllProductsCommand command = new GetAllProductsCommand(size, page, sort, order, filter);
         GetAllProductOutput products = getAllProductsUseCase.execute(command);

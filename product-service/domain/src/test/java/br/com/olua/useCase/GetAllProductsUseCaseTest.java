@@ -33,8 +33,8 @@ public class GetAllProductsUseCaseTest {
         final var expectedTerm = UUID.randomUUID().toString();
         final var expectedPage = 0;
         final var expectedSize = 10;
-        final var expectedSort = UUID.randomUUID().toString();
-        final var expectedDirection = UUID.randomUUID().toString();
+        final var expectedSort = "name";
+        final var expectedDirection = "asc";
 
         GetAllProductsCommand command = new GetAllProductsCommand(expectedSize, expectedPage, expectedSort, expectedDirection, expectedTerm);
         useCase.execute(command);

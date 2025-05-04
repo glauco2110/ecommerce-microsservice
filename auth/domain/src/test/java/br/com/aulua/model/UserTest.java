@@ -9,15 +9,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class UserTest {
 
-    // Test cases for User class
-    // 1. Test user creation with valid data
-    // 2. Test user creation with invalid name
-    // 3. Test user creation with invalid email
-    // 4. Test user creation with invalid password
-    // 5. Test user creation with null values
-
-    // Add your test methods here
-
     @Test
     void givenAValidUser_whenCalledNewInstance_thenReturnNewUser() {
         final var expectedName = UUID.randomUUID().toString();
