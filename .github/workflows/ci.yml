@@ -37,6 +37,10 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
+      - name: Build and install dependencies
+        run: |
+          mvn install --projects application,domain,infrastructure
+
       - name: Cache SonarCloud packages
         uses: actions/cache@v4
         with:
