@@ -9,6 +9,11 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
+    <properties>
+        <sonar.organization>glauco2110</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    </properties>
+
     <artifactId>report-aggregate</artifactId>
 
     <dependencies>
