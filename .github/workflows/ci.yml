@@ -57,7 +57,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           for dir in $(find . -name "pom.xml" -exec dirname {} \;); do
-            echo "Building project in $dir"
+            echo "Analyzing project in $dir"
             cd $dir
             mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
               -Dsonar.projectKey=glauco2110_ecommerce-microsservice \
